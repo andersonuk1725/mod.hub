@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mod APK Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Mod APK Hub</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#mods">Mods</a>
+        
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero container">
+    <h2>Welcome to Mod APK Hub</h2>
+    <p>Download free and safe modded Android APKs. No ads, no BS.</p>
+  </section>
+
+  <section id="mods" class="container">
+     <h2>Popular Mods</h2>
+    <input type="text" id="searchInput" placeholder="Search mods..." class="search-bar" />
+    </h2>
+    <div class="mod-list">
+      <div class="mod-card">
+        <h3>Clash of Clans Mod</h3>
+        <p>Unlimited gems and resources.</p>
+        <a href="#">Download</a>
+      </div>
+      <div class="mod-card">
+        <h3>Spotify Premium Mod</h3>
+        <p>Ad-free music with all features unlocked.</p>
+        <a href="#">Download</a>
+      </div>
+      <div class="mod-card">
+        <h3>PUBG Mobile Hack</h3>
+        <p>Aimbot and wallhack features included.</p>
+        <a href="#">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Have a request or issue? Email us at <a href="mailto:support@modapkhub.com">support@modapkhub.com</a></p>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mod APK Hub. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clash of Clans Mod APK</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="../index.html">Mod APK Hub</a></h1>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <h2>Clash of Clans Mod APK</h2>
+    <p><strong>Version:</strong> 14.635.5</p>
+    <p><strong>Size:</strong> 150MB</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+      <li>Unlimited Gems, Gold, Elixir</li>
+      <li>No Ads</li>
+      <li>Private Server</li>
+      <li>Anti-ban protection</li>
+    </ul>
+   
+   
+   
+    <a href="mods/clash-of-clans.html">Download</a>
+
+    <p>This modded version of Clash of Clans lets you build your village and upgrade troops with unlimited resources. It runs on a private server and does not affect your official Supercell account.</p>
+
+    <a href="#" class="btn">Download Now</a>
+    <br><br>
+    <a href="../index.html">⬅ Back to Home</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mod APK Hub. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const modCards = document.querySelectorAll('.mod-card');
+  
+    searchInput.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      modCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+</body>
+
+</html>
+
+
+
+<div class="mod-card">
+    <h3>Clash of Clans Mod</h3>
+    <p>Unlimited gems and resources.</p>
+    <a href="#" class="download-btn" data-mod="clash">Download</a>
+    <p class="downloads">Downloaded <span id="count-clash">5278</span> times</p>
+  </div>
+  
+  <div class="mod-card">
+    <h3>spotify</h3>
+    <p>Unlimited gems and resources.</p>
+    <a href="#" class="download-btn" data-mod="clash">Download</a>
+    <p class="downloads">Downloaded <span id="count-spotify">5278</span> times</p>
+  </div>
+  
+
+  <div class="mod-card">
+    <h3>pubg</h3>
+    <p>Unlimited gems and resources.</p>
+    <a href="#" class="download-btn" data-mod="clash">Download</a>
+    <p class="downloads">Downloaded <span id="count-pubg">5278</span> times</p>
+  </div>
+  
+
+  <script>
+    const counters = {
+      clash: parseInt(localStorage.getItem('count-clash')) || 5278,
+      spotify: parseInt(localStorage.getItem('count-spotify')) || 8123,
+      pubg: parseInt(localStorage.getItem('count-pubg')) || 9342,
+    };
+  
+    function updateUI() {
+      for (const mod in counters) {
+        const countEl = document.getElementById(`count-${mod}`);
+        if (countEl) countEl.textContent = counters[mod];
+      }
+    }
+  
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mod = btn.getAttribute('data-mod');
+        counters[mod]++;
+        localStorage.setItem(`count-${mod}`, counters[mod]);
+        updateUI();
+      });
+    });
+  
+    updateUI();
+  </script>
+  
+
+  <section id="admin" class="container" style="margin-top: 50px;">
+    <h2>Admin Panel (Add Mod)</h2>
+    <input type="text" id="modTitle" placeholder="Mod Name" class="admin-input" />
+    <input type="text" id="modDesc" placeholder="Short Description" class="admin-input" />
+    <input type="text" id="modLink" placeholder="Download Link" class="admin-input" />
+    <button id="addModBtn" class="btn">Add Mod</button>
+  </section>
+
+  
+  <script>
+    // Add mod feature
+    document.getElementById('addModBtn').addEventListener('click', () => {
+      const title = document.getElementById('modTitle').value.trim();
+      const desc = document.getElementById('modDesc').value.trim();
+      const link = document.getElementById('modLink').value.trim();
+  
+      if (title && desc && link) {
+        const modList = document.querySelector('.mod-list');
+  
+        const card = document.createElement('div');
+        card.className = 'mod-card';
+        card.innerHTML = `
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          <a href="${link}" target="_blank">Download</a>
+          <p class="downloads">Downloaded <span>0</span> times</p>
+        `;
+  
+        modList.appendChild(card);
+  
+        // Clear inputs
+        document.getElementById('modTitle').value = '';
+        document.getElementById('modDesc').value = '';
+        document.getElementById('modLink').value = '';
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+  
